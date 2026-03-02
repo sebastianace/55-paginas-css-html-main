@@ -1,3 +1,4 @@
+/* 1. RESET Y CONFIGURACIÓN BASE */
 * {
     margin: 0;
     padding: 0;
@@ -5,232 +6,140 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff;
-    color: #222;
+    overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
-/* ─── HERO ─── */
-.plant-hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 40px;
-    padding: 60px 10%;
-    background: #f9f9f9;
-    border-radius: 0 0 40px 40px;
-}
-
-/* ─── TEXTO IZQUIERDO ─── */
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    line-height: 1.3;
-    color: #111;
-}
-
-.green {
-    color: #2e7d32;
-}
-
-.hero-text > p {
-    font-size: 1rem;
-    margin-bottom: 28px;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* ─── STATS ─── */
-.stats {
+main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
     display: flex;
-    gap: 30px;
-    margin-bottom: 28px;
+    flex-wrap: wrap; /* Permite que los elementos bajen en móviles */
+    position: relative;
+    padding-bottom: 120px; /* Espacio para las tarjetas de abajo */
 }
 
-.stat-item {
+/* 2. CONTENEDOR IZQUIERDO */
+#contenido {
+    background-color: #f2f2f2;
+    width: 50%; /* Cambiamos vw por % para estabilidad */
+    min-height: 80vh;
+    border-radius: 0 0 400px 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    justify-content: center;
+    padding: 60px 5% 60px 10%; /* Padding proporcional */
+    z-index: 2;
+}
+
+#titulo h1 {
+    font-family: "Lato", sans-serif;
+    font-size: clamp(32px, 4vw, 35px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #333;
+}
+
+b { color: #437223; font-weight: 900; }
+
+#parrafo {
+    margin: 25px 0;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    color: #555;
+    max-width: 400px;
+}
+
+/* 3. STATS Y BOTÓN */
+#stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
 .stat-item h3 {
-    font-size: 1.4rem;
-    color: #111;
-    margin: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 24px;
+    border-bottom: 3px solid #437223;
+    display: inline-block;
 }
 
-.stat-item hr {
+.stat-item p { font-size: 12px; color: #777; margin-top: 5px; }
+
+#boton {
+    background-color: #437223;
+    width: 220px;
+    height: 55px;
     border: none;
-    border-top: 2px solid #ccc;
-    width: 100%;
-    margin: 2px 0;
-}
-
-.stat-item p {
-    font-size: 0.82rem;
-    color: #777;
-    margin: 0;
-    line-height: 1.4;
-}
-
-.hero-text button {
-    background: #2e7d32;
-    color: #fff;
-    border: none;
-    padding: 13px 32px;
     border-radius: 30px;
-    font-size: 1rem;
+    transition: 0.3s;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
-.hero-text button:hover {
-    background: #256427;
+#boton a {
+    text-decoration: none;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    display: block;
 }
 
-/* ─── IMAGEN + LOGO ─── */
-.hero-image {
+#boton:hover { background-color: #355a1c; transform: scale(1.05); }
+
+/* 4. SECCIÓN DERECHA (IMÁGENES) */
+#contenido_2 {
+    width: 50%;
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.hero-image > img {
-    width: 100%;
-    max-width: 560px;
+#imagen {
+    width: 90%; /* Ahora depende de su contenedor derecho */
+    max-width: 600px;
     height: auto;
-    object-fit: contain;
+    z-index: 1;
 }
 
-/* Logo circular flotando arriba a la derecha */
-.logo-circle {
+#dog-paw2 {
+    width: 100px;
     position: absolute;
-    top: -20px;
-    right: 0;
+    right: 5%;
+    top: 5%;
+    z-index: 0;
+}
+
+/* 5. TARJETAS INFERIORES */
+#cards {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    bottom: 20px;
+    display: flex;
+    gap: 15px;
     z-index: 10;
 }
 
-.logo-circle img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-}
-
-/* ─── CARDS ─── */
-.plant-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 40px 10%;
-}
-
-.card {
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 18px 20px;
+.cardclass {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    background: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.card img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
+.cardclass img { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; }
 
-.card p {
-    font-size: 0.88rem;
-    color: #444;
-    line-height: 1.5;
-    margin: 0;
-}
+.cartas p { font-size: 11px; font-family: "Lato", sans-serif; }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-}
-
-/* ─── TABLET (max 1024px) ─── */
+/* 6. MEDIA QUERIES (RESPONSIVE) */
 @media (max-width: 1024px) {
-    .plant-hero {
-        padding: 50px 6%;
-        gap: 28px;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .plant-cards {
-        padding: 32px 6%;
-    }
-}
-
-/* ─── MÓVIL GRANDE (max 900px) ─── */
-@media (max-width: 900px) {
-    .plant-hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 40px 8%;
-    }
-
-    .hero-image {
-        order: -1;
-    }
-
-    .logo-circle {
-        top: 0;
-        right: 10px;
-    }
-
-    .stats {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .stat-item {
-        align-items: center;
-    }
-
-    .hero-text button {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .plant-cards {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* ─── MÓVIL (max 600px) ─── */
-@media (max-width: 600px) {
-    .plant-hero {
-        padding: 32px 5%;
-        border-radius: 0 0 24px 24px;
-    }
-
-    .hero-text h1 {
-        font-size: 1.7rem;
-    }
-
-    .plant-cards {
-        grid-template-columns: 1fr;
-        padding: 24px 5%;
-    }
-}
-
-/* ─── MÓVIL PEQUEÑO (max 400px) ─── */
-@media (max-width: 400px) {
-    .hero-text h1 {
-        font-size: 1.4rem;
-    }
-
-    .stats {
-        flex-direction: column;
-        align-items: center;
-    }
+    #contenido { width: 100%; border-radius: 0 0 100px 0; min-height: auto; padding: 60px 10%; }
+    #contenido_2 { width: 100%; padding: 40px 0; }
+    #imagen { width: 70%; }
+    #cards { position: relative; flex-direction: column; left: 0; width: 80%; margin: 20px auto; bottom: 0; }
 }
