@@ -15,11 +15,9 @@ Los estilos están ubicados en la carpeta **style**
 
 Ya que esto permite modificar la tipografía, colores y estructura de forma sencilla y asegura un diseño coherente en todas las páginas.
 
-## si no tienes visual entra al siguiente enlace:
+## para ver el repositorio del trabajo en grupo entra al siguiente enlace:
 
-http://127.0.0.1:5501/55-paginas-css-html-main/index.html
-https://sebastianace.github.io/index.html
-https://sebastianace.github.io
+https://github.com/samuelgelvez-star/Actividad_Landing.git
 
 ## Realizado por: 
 
